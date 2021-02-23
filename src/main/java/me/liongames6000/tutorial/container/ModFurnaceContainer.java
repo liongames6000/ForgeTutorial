@@ -70,7 +70,7 @@ public class ModFurnaceContainer extends Container {
         for(int row = 0; row < 3; row++) {
             for(int column = 0; column < 9; column++) {
                 this.addSlot(new Slot(playerInventory, 9 + (row * 9) + column, playerInventoryStartX +
-                        (column * slotSizePlus2), playerInventoryStartX + (row * slotSizePlus2)));
+                        (column * slotSizePlus2), playerInventoryStartY + (row * slotSizePlus2)));
             }
         }
 

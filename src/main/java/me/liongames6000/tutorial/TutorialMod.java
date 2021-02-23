@@ -1,9 +1,15 @@
 package me.liongames6000.tutorial;
 
-import me.liongames6000.tutorial.init.Registration;
+import me.liongames6000.tutorial.init.ModBlocks;
+import me.liongames6000.tutorial.init.ModContainerTypes;
+import me.liongames6000.tutorial.init.ModItems;
+import me.liongames6000.tutorial.init.ModTileEntityTypes;
 import me.liongames6000.tutorial.utils.ModResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -16,8 +22,17 @@ public class TutorialMod {
     public static final Logger LOGGER = LogManager.getLogger(MOD_NAME);
 
     public TutorialMod() {
-        Registration.register();
         MinecraftForge.EVENT_BUS.register(this);
+
+        final ModLoadingContext modLoadingContext = ModLoadingContext.get();
+        final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModBlocks.BLOCKS.register(modEventBus);
+        ModContainerTypes.CONTAINER_TYPES.register(modEventBus);
+        ModItems.ITEMS.register(modEventBus);
+        ModTileEntityTypes.TILE_ENTITY_TYPES.register(modEventBus);
+
+
     }
 
     public static ModResourceLocation getId(String path) {

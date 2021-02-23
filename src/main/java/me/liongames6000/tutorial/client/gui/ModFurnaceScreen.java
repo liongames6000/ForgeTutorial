@@ -51,7 +51,7 @@ public class ModFurnaceScreen extends ContainerScreen<ModFurnaceContainer> {
     }
 
     @Override
-    protected void drawGuiContainerForegroundLayer(MatrixStack matrixStack, int mouseX, int mouseY) {
+    protected void drawGuiContainerForegroundLayer(MatrixStack matrixStack, final int mouseX, final int mouseY) {
         super.drawGuiContainerForegroundLayer(matrixStack, mouseX, mouseY);
         // Copied from AbstractFurnaceScreen#drawGuiContainerForegroundLayer
         String s = this.title.getString();

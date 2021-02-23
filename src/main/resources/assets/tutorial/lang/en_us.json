@@ -1,3 +1,6 @@
 {
-  "item.tutorial.silver_ingot": "Silver Ingot"
+  "item.tutorial.silver_ingot": "Silver Ingot",
+  "block.tutorial.mod_furnace": "Mod Furnace",
+  "gui.tutorial.smeltTimeProgress": "Smelt time %s %s",
+  "gui.tutorial.fuelBurnTimeProgress": "Fuel burn time %s/%s"
 }
